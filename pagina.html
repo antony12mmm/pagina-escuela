@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<tittle>hola mundo</tittle>
+</head>
+<body>
+<h1>no logro hacerlo</h1>
+<p>
+conexion=mysqli_connect (jdbc:mysql://localhost/papas, root, "") or die ("no se conecto");
+  
+ public function Listar()
+    {
+        try
+        {
+            result = array();
+
+            stm = this->pdo->prepare("SELECT * FROM papas");
+            stm->execute();
+
+            foreach(stm->fetchAll(PDO::FETCH_OBJ) as r)
+            {
+                alm = new papas();
+
+                alm->__SET('id', r->id_papa);
+                alm->__SET('Nombre', r->Nombre);
+                alm->__SET('precio', r->precio);
+               
+                result[] = alm;
+            }
+
+            return result;
+        }
+        catch(Exception e)
+        {
+            die(e->getMessage());
+        }
+    }
+</p>
+</body>
+</html>
